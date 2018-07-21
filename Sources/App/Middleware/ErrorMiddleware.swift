@@ -1,8 +1,5 @@
 //
-//  TranseoErrorMiddleware.swift
-//  App
-//
-//  Created by Jimmy McDermott on 4/8/18.
+//  ErrorMiddleware.swift
 //
 
 import Async
@@ -13,7 +10,7 @@ import Vapor
 import Leaf
 import Fluent
 
-public final class TranseoErrorMiddleware: Middleware, Service {
+public final class ErrorMiddleware: Middleware, Service {
     
     public init() { }
     

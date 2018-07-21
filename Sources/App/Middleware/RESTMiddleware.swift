@@ -1,8 +1,5 @@
 //
 //  RESTMiddleware.swift
-//  App
-//
-//  Created by Jimmy McDermott on 6/12/18.
 //
 
 import Foundation

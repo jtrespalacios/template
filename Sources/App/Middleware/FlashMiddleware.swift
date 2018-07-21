@@ -1,15 +1,12 @@
 //
-//  TranseoFlashMiddleware.swift
-//  App
-//
-//  Created by Jimmy McDermott on 7/17/18.
+//  FlashMiddleware.swift
 //
 
 import Foundation
 import Vapor
 import Flash
 
-final class TranseoFlashMiddleware: Middleware {
+final class FlashMiddleware: Middleware {
     func respond(to request: Request, chainingTo next: Responder) throws -> EventLoopFuture<Response> {
         let flashContainer = try request.make(FlashContainer.self)
         
