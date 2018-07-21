@@ -48,11 +48,11 @@
       },
       {
         "package": "Flash",
-        "repositoryURL": "https://github.com/gotranseo/flash.git",
+        "repositoryURL": "https://github.com/nodes-vapor/flash.git",
         "state": {
           "branch": null,
-          "revision": "6a54f1eca962f4f73c7950ef8ef51ee31378c5cf",
-          "version": "3.0.1"
+          "revision": "5e190d0243cd2b4324b91d45cf6a894b2131b43b",
+          "version": "3.0.0"
         }
       },
       {
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-mysql.git",
         "state": {
           "branch": null,
-          "revision": "56789b520e625e7b26074f9abdac72bdce95f1f4",
-          "version": "3.0.0-rc.4.0.3"
+          "revision": "9f129ebff10a7d0331b8be0ac49b555a85e2e261",
+          "version": "3.0.0"
         }
       },
       {
@@ -89,6 +89,24 @@
           "branch": null,
           "revision": "de0dc5bbba60250c24c5c4b4d2505d7a71dd03ae",
           "version": "3.0.0-rc.2.1.2"
+        }
+      },
+      {
+        "package": "JWTMiddleware",
+        "repositoryURL": "https://github.com/skelpo/JWTMiddleware.git",
+        "state": {
+          "branch": null,
+          "revision": "3f9493e5560b6e923a3b5c908de3f441800dda7a",
+          "version": "0.8.0"
+        }
+      },
+      {
+        "package": "JWTVapor",
+        "repositoryURL": "https://github.com/skelpo/JWTVapor.git",
+        "state": {
+          "branch": null,
+          "revision": "e9bcc3ae35facb45eeae3850812f846f6b0f8b08",
+          "version": "0.11.1"
         }
       },
       {
@@ -114,8 +132,8 @@
         "repositoryURL": "https://github.com/vapor/mysql.git",
         "state": {
           "branch": null,
-          "revision": "592c52a9c125f4e0308c3c7a1dd7f476ecce2896",
-          "version": "3.0.0-rc.4.4"
+          "revision": "8717e4a6389ff1ff56801f4e6411309105945c62",
+          "version": "3.0.0"
         }
       },
       {
@@ -233,6 +251,15 @@
           "branch": null,
           "revision": "6b07105a3899fbbae194ee3eb82f54debe502221",
           "version": "3.0.6"
+        }
+      },
+      {
+        "package": "VaporRequestStorage",
+        "repositoryURL": "https://github.com/skelpo/vapor-request-storage.git",
+        "state": {
+          "branch": null,
+          "revision": "8b78db172e07c6d616b85966177f195bed3936b2",
+          "version": "0.4.0"
         }
       },
       {
