@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "VaporApp",
+    name: "TestBuild",
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
         .package(url: "https://github.com/vapor/fluent-mysql.git", from: "3.0.0"),
@@ -12,8 +12,7 @@ let package = Package(
         .package(url: "https://github.com/vapor/leaf.git", from: "3.0.0-rc.2"),
         .package(url: "https://github.com/brokenhandsio/VaporSecurityHeaders.git", from: "2.0.0"),
         .package(url: "https://github.com/vapor/jwt.git", from: "3.0.0-rc.2"),
-        .package(url: "https://github.com/skelpo/JWTMiddleware.git", from: "0.6.1"),
-        .package(url: "https://github.com/nodes-vapor/flash.git", from: "3.0.0")
+        .package(url: "https://github.com/SwiftyBeaver/SwiftyBeaver-Vapor.git", from: "1.1.0"),
     ],
     targets: [
         .target(name: "App", dependencies: [
@@ -24,11 +23,11 @@ let package = Package(
             "Authentication",
             "URLEncodedForm",
             "VaporSecurityHeaders",
-            "Flash",
             "JWT",
-            "JWTMiddleware"
+            "SwiftyBeaverVapor"
             ]),
         .target(name: "Run", dependencies: ["App"]),
         .testTarget(name: "AppTests", dependencies: ["App"])
     ]
 )
+

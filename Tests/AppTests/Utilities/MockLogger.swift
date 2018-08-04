@@ -1,8 +1,5 @@
 //
-//  MockLogger.swift
-//  AppTests
-//
-//  Created by Jimmy McDermott on 5/7/18.
+// created on 7/21/18
 //
 
 import Foundation

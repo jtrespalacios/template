@@ -1,7 +1,6 @@
 import Vapor
 import Fluent
 import Authentication
-import Flash
 
 struct VersionRoute {
     static let path = "api/v1"
@@ -23,7 +22,6 @@ extension Router {
         var middleware: [Middleware] = []
         
         middleware.append(User.authSessionsMiddleware())
-        middleware.append(FlashMiddleware())
         
         if type == .all {
             middleware.append(AuthedMiddleware())

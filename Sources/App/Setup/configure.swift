@@ -5,24 +5,64 @@ import Redis
 import VaporSecurityHeaders
 import URLEncodedForm
 import Authentication
+import SwiftyBeaver
+import SwiftyBeaverVapor
 
 public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws {
     // MARK: -  Register providers first
     try services.register(FluentMySQLProvider())
 
-    guard let databaseUrlString = Environment.get(Constants.databaseURL) else { throw Abort(.internalServerError) }
-    guard let mysqlConfig = try MySQLDatabaseConfig(url: databaseUrlString) else { throw Abort(.internalServerError) }
+    // MARK: - Logger Setup
+    let loggingDestination = ConsoleDestination()
+    try services.register(SwiftyBeaverProvider(destinations: [loggingDestination]))
+    config.prefer(SwiftyBeaverVapor.self, for: Logger.self)
+
+    // MARK: - MySQL Configuration
+    let dbName = Environment.get(Constants.MySQL.database) ?? "vapor"
+    let dbUsername = Environment.get(Constants.MySQL.username) ?? "vapor"
+    let dbPassword = Environment.get(Constants.MySQL.password) ?? "password"
+    let dbHost = Environment.get(Constants.MySQL.host) ?? "127.0.0.1"
+    let rawPort = Environment.get(Constants.MySQL.port) ?? "3306"
+
+    guard let dbPort = Int(rawPort) else {
+        throw Abort(.internalServerError)
+    }
+
+    let mysqlConfig = MySQLDatabaseConfig(hostname: dbHost,
+                                          port: dbPort,
+                                          username: dbUsername,
+                                          password: dbPassword,
+                                          database: dbName)
+
+    // MARK: - Setup Auth
+    try services.register(AuthenticationProvider())
+
+    // MARK: - Setup Redis
+    let redisPassword = Environment.get(Constants.Redis.password) ?? "password"
+    let redistHost = Environment.get(Constants.Redis.host) ?? "127.0.0.1"
+    let rawRedisPort = Environment.get(Constants.Redis.port) ?? "6379"
+
+    guard let redisPort = Int(rawRedisPort) else {
+        throw Abort(.internalServerError)
+    }
+
+    var redisUrl = URLComponents()
+    redisUrl.host = redistHost
+    redisUrl.password = redisPassword
+    redisUrl.port = redisPort
+    redisUrl.scheme = "redis"
+
+    guard let url = redisUrl.url else {
+        throw Abort(.internalServerError)
+    }
+
+    // MARK: - Register Redis
+    try services.register(RedisProvider())
+    let redisConfig = try RedisDatabase(config: RedisClientConfig(url: url))
+
 
     // MARK: -  Setup Auth
     try services.register(AuthenticationProvider())
-
-    // MARK: -  Setup Redis
-    guard let redisUrlString = Environment.get(Constants.redisURL) else { throw Abort(.internalServerError) }
-    guard let redisUrl = URL(string: redisUrlString) else { throw Abort(.internalServerError) }
-
-    // MARK: -  Register Redis
-    try services.register(RedisProvider())
-    let redisConfig = try RedisDatabase(config: RedisClientConfig(url: redisUrl))
 
     // MARK: -  Register routes to the router
     let router = EngineRouter.default()
@@ -55,7 +95,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
                                path: "/",
                                isSecure: secure,
                                isHTTPOnly: true,
-                               sameSite: .lax)
+                               sameSite: .strict)
     }
 
     services.register(sessionsConfig)
@@ -126,10 +166,10 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     services.register(commandConfig)
 
     // MARK: -  Register KeyStorage
-    guard let apiKey = Environment.get(Constants.restMiddlewareEnvKey) else { throw Abort(.internalServerError) }
-    services.register { container -> KeyStorage in
-        return KeyStorage(restMiddlewareApiKey: apiKey)
-    }
+    //    guard let apiKey = Environment.get(Constants.restMiddlewareEnvKey) else { throw Abort(.internalServerError) }
+    //    services.register { container -> KeyStorage in
+    //        return KeyStorage(restMiddlewareApiKey: apiKey)
+    //    }
 
     // MARK: -  Leaf Tag Config
     let defaultTags = LeafTagConfig.default()

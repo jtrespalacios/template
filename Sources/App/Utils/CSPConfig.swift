@@ -1,8 +1,5 @@
 //
-//  CSPConfig.swift
-//  App
-//
-//  Created by Jimmy McDermott on 6/11/18.
+// created on 7/21/18
 //
 
 import Foundation

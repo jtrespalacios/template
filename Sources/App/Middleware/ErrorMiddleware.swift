@@ -1,5 +1,5 @@
 //
-//  ErrorMiddleware.swift
+// created on 7/21/18
 //
 
 import Async
@@ -39,13 +39,7 @@ public final class ErrorMiddleware: Middleware, Service {
         let log = try req.make(Logger.self)
         
         if let redirectError = error as? RedirectError {
-            if let error = redirectError.flashError {
-                return Future.map(on: req) { req.redirect(to: redirectError.to).flash(.error, error) }
-            } else if let success = redirectError.flashSucceed {
-                return Future.map(on: req) { req.redirect(to: redirectError.to).flash(.success, success) }
-            } else {
-                return Future.map(on: req) { req.redirect(to: redirectError.to) }
-            }
+            return Future.map(on: req) { req.redirect(to: redirectError.to) }
         } else {
             let reason: String
             let status: HTTPResponseStatus

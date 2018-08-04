@@ -1,8 +1,5 @@
 //
-//  RegisterViewController.swift
-//  App
-//
-//  Created by Jimmy McDermott on 6/12/18.
+// created on 7/21/18
 //
 
 import Foundation
@@ -35,13 +32,13 @@ class RegisterViewController: RouteCollection {
             guard count == 0 else { throw RedirectError(to: "/register", error: "A user with that email exists already") }
             
             let hashedPassword = try BCrypt.hash(content.password)
-            let newUser = User(name: content.name, email: content.email, password: hashedPassword)
+            let newUser = User(email: content.email, password: hashedPassword)
             try newUser.validate()
             
-            let response = req.redirect(to: "/home").flash(.success, "Successfully registered")
+            let response = req.redirect(to: "/home")
             return repository.save(user: newUser, on: req).transform(to: response)
         }.catchMap { error in
-            return req.redirect(to: "/register").flash(.success, "Invalid email")
+            return req.redirect(to: "/register")
         }
     }
 }

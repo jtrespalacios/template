@@ -5,3 +5,8 @@ struct LoginRequest: Content {
     let password: String
     let csrf: String
 }
+
+struct APILoginRequest: Content {
+    let email: String
+    let password: String
+}

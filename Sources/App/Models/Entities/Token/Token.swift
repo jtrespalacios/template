@@ -4,7 +4,7 @@ import FluentMySQL
 import Authentication
 
 final class Token: Content {
-    var id: Int?
+    var id: UUID?
     
     var token: String
     var user_id: User.ID
@@ -21,7 +21,7 @@ final class Token: Content {
     }
 }
 
-extension Token: MySQLModel {
+extension Token: MySQLUUIDModel {
     static var entity = "tokens"
 }
 
@@ -41,7 +41,7 @@ extension Token {
 }
 
 extension Token: BearerAuthenticatable, Authentication.Token {
-    static var userIDKey: WritableKeyPath<Token, Int> {
+    static var userIDKey: WritableKeyPath<Token, UUID> {
         return \Token.user_id
     }
     

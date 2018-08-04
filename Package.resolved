@@ -42,17 +42,8 @@
         "repositoryURL": "https://github.com/vapor/database-kit.git",
         "state": {
           "branch": null,
-          "revision": "acdd4d3384ec0122dcfcca8d23d9054a2860ffba",
-          "version": "1.2.0"
-        }
-      },
-      {
-        "package": "Flash",
-        "repositoryURL": "https://github.com/nodes-vapor/flash.git",
-        "state": {
-          "branch": null,
-          "revision": "5e190d0243cd2b4324b91d45cf6a894b2131b43b",
-          "version": "3.0.0"
+          "revision": "7a01659316b9f033fa2150d5cd5e9d3c3e46c2e3",
+          "version": "1.3.0"
         }
       },
       {
@@ -69,8 +60,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-mysql.git",
         "state": {
           "branch": null,
-          "revision": "9f129ebff10a7d0331b8be0ac49b555a85e2e261",
-          "version": "3.0.0"
+          "revision": "2e2f6ea6a97d0b352cf55e6ec289dc1276a6b31a",
+          "version": "3.0.1"
         }
       },
       {
@@ -92,24 +83,6 @@
         }
       },
       {
-        "package": "JWTMiddleware",
-        "repositoryURL": "https://github.com/skelpo/JWTMiddleware.git",
-        "state": {
-          "branch": null,
-          "revision": "3f9493e5560b6e923a3b5c908de3f441800dda7a",
-          "version": "0.8.0"
-        }
-      },
-      {
-        "package": "JWTVapor",
-        "repositoryURL": "https://github.com/skelpo/JWTVapor.git",
-        "state": {
-          "branch": null,
-          "revision": "e9bcc3ae35facb45eeae3850812f846f6b0f8b08",
-          "version": "0.11.1"
-        }
-      },
-      {
         "package": "Leaf",
         "repositoryURL": "https://github.com/vapor/leaf.git",
         "state": {
@@ -123,8 +96,8 @@
         "repositoryURL": "https://github.com/vapor/multipart.git",
         "state": {
           "branch": null,
-          "revision": "7778dcb62f3efa845e8e2808937bb347575ba7ce",
-          "version": "3.0.1"
+          "revision": "e57007c23a52b68e44ebdfc70cbe882a7c4f1ec3",
+          "version": "3.0.2"
         }
       },
       {
@@ -132,8 +105,8 @@
         "repositoryURL": "https://github.com/vapor/mysql.git",
         "state": {
           "branch": null,
-          "revision": "8717e4a6389ff1ff56801f4e6411309105945c62",
-          "version": "3.0.0"
+          "revision": "448f1ca28b3ea0f64a627bec22e5b0945d31b9f4",
+          "version": "3.0.2"
         }
       },
       {
@@ -141,8 +114,8 @@
         "repositoryURL": "https://github.com/vapor/redis.git",
         "state": {
           "branch": null,
-          "revision": "0be9cc95de432b9d52bac81c6b58513c0a463a40",
-          "version": "3.0.0-rc.3"
+          "revision": "80c9032c70eddb7df5ffb28eddf4237ff3415ae8",
+          "version": "3.0.0-rc.5"
         }
       },
       {
@@ -173,21 +146,12 @@
         }
       },
       {
-        "package": "Sugar",
-        "repositoryURL": "https://github.com/nodes-vapor/sugar.git",
-        "state": {
-          "branch": null,
-          "revision": "1e19ece5ba23abe90a05faabeca3393b0b04022a",
-          "version": "3.0.0-beta.11"
-        }
-      },
-      {
         "package": "swift-nio",
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "695afc5205aaa49fca092b94b479ff71c43d9d3c",
-          "version": "1.8.0"
+          "revision": "c6acf77fc9a310c0ebf8d5f73f285d1639801d2f",
+          "version": "1.9.0"
         }
       },
       {
@@ -195,8 +159,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio-ssl.git",
         "state": {
           "branch": null,
-          "revision": "0adc938bc8de3d3829b842f9767d81c7480b8403",
-          "version": "1.1.1"
+          "revision": "6617eb0d3afcb12170594968df01ca63afb58ac5",
+          "version": "1.2.0"
         }
       },
       {
@@ -218,6 +182,24 @@
         }
       },
       {
+        "package": "SwiftyBeaver",
+        "repositoryURL": "https://github.com/SwiftyBeaver/SwiftyBeaver.git",
+        "state": {
+          "branch": null,
+          "revision": "725e6c355d3b0f6f623162029c0bb88630c10a20",
+          "version": "1.6.0"
+        }
+      },
+      {
+        "package": "SwiftyBeaverVapor",
+        "repositoryURL": "https://github.com/SwiftyBeaver/SwiftyBeaver-Vapor.git",
+        "state": {
+          "branch": null,
+          "revision": "45d05180505ca7e10508bbcb90c72ca2fea9fbe4",
+          "version": "1.1.0"
+        }
+      },
+      {
         "package": "TemplateKit",
         "repositoryURL": "https://github.com/vapor/template-kit.git",
         "state": {
@@ -231,8 +213,8 @@
         "repositoryURL": "https://github.com/vapor/url-encoded-form.git",
         "state": {
           "branch": null,
-          "revision": "57cf7fb9c1a1014c50bc05123684a9139ad44127",
-          "version": "1.0.3"
+          "revision": "cbfe7ef6301557d3f2d0807a98165232ae06e1c6",
+          "version": "1.0.4"
         }
       },
       {
@@ -249,17 +231,8 @@
         "repositoryURL": "https://github.com/vapor/vapor.git",
         "state": {
           "branch": null,
-          "revision": "6b07105a3899fbbae194ee3eb82f54debe502221",
-          "version": "3.0.6"
-        }
-      },
-      {
-        "package": "VaporRequestStorage",
-        "repositoryURL": "https://github.com/skelpo/vapor-request-storage.git",
-        "state": {
-          "branch": null,
-          "revision": "8b78db172e07c6d616b85966177f195bed3936b2",
-          "version": "0.4.0"
+          "revision": "54632a6c1e7ecd9923c0d00b612de936de1c4745",
+          "version": "3.0.8"
         }
       },
       {

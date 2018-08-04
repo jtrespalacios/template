@@ -3,11 +3,11 @@ import Vapor
 import Fluent
 import FluentMySQL
 import Authentication
+import JWT
 
 final class User: Content {
-    var id: Int?
+    var id: UUID?
     
-    var name: String
     var email: String
     var password: String
     
@@ -15,8 +15,7 @@ final class User: Content {
     var updatedAt: Date?
     var deletedAt: Date?
     
-    init(name: String, email: String, password: String) {
-        self.name = name
+    init(email: String, password: String) {
         self.email = email
         self.password = password
     }
@@ -36,7 +35,7 @@ extension User {
     static var updatedAtKey: TimestampKey? = \.updatedAt
 }
 
-extension User: MySQLModel {
+extension User: MySQLUUIDModel {
     static var entity = "users"
 }
 
@@ -49,7 +48,6 @@ extension User: SessionAuthenticatable { }
 extension User {
     private func setSession(session: Session, on connectable: DatabaseConnectable) throws -> User {
         session[Constants.SessionKeys.userEmail] = email
-        session[Constants.SessionKeys.userName] = name
         
         if let id = id {
             session[Constants.SessionKeys.userId] = String(id)
