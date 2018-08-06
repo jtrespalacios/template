@@ -1,0 +1,7 @@
+#set("title") {Not Found}
+#set("body") {
+<p>404</p>
+<p>Missing :(</p>
+}
+
+#embed("_master")

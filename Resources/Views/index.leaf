@@ -1,0 +1,6 @@
+#set("title") {Home}
+#set("body") {
+<p>Hello :)</p>
+}
+
+#embed("_master")
