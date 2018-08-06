@@ -38,7 +38,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     try services.register(AuthenticationProvider())
 
     // MARK: - Setup Redis
-    let redisPassword = Environment.get(Constants.Redis.password) ?? "password"
+    let redisPassword = Environment.get(Constants.Redis.password)
     let redistHost = Environment.get(Constants.Redis.host) ?? "127.0.0.1"
     let rawRedisPort = Environment.get(Constants.Redis.port) ?? "6379"
 
